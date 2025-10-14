@@ -1,0 +1,9 @@
+micronaut:
+  application:
+    name: default
+
+
+user:
+  username: user001
+  full-name: USER 001
+  email: user001@gmail.com
