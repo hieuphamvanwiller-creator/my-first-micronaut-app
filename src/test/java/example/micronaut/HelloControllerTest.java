@@ -47,6 +47,15 @@ public class HelloControllerTest {
     }
 
     @Test
+    public void testHelloController() {
+        HttpRequest<?> request = HttpRequest.GET("/name-annotation/hello").accept(MediaType.TEXT_PLAIN);  // <3>
+        String body = client.toBlocking().retrieve(request);
+
+        assertNotNull(body);
+        assertEquals("Hello World", body);
+    }
+
+    @Test
     void testStadiumConfiguration() {
         ApplicationContext ctx = ApplicationContext.run();
 
