@@ -18,10 +18,13 @@ package example.micronaut;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import example.micronaut.core_basics.name.Hello;
+import io.micronaut.context.ApplicationContext;
 import io.micronaut.http.HttpRequest;
 import io.micronaut.http.MediaType;
 import io.micronaut.http.client.HttpClient;
 import io.micronaut.http.client.annotation.Client;
+import io.micronaut.inject.qualifiers.Qualifiers;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 import org.junit.jupiter.api.Test;
 
@@ -41,5 +44,21 @@ public class HelloControllerTest {
 
         assertNotNull(body);
         assertEquals("Hello World", body);
+    }
+
+    @Test
+    void testStadiumConfiguration() {
+        ApplicationContext ctx = ApplicationContext.run();
+
+
+        Hello helloWorld = ctx.getBean(Hello.class, Qualifiers.byName("hello-world"));
+        Hello helloVietNam = ctx.getBean(Hello.class, Qualifiers.byName("hello-vietnam"));
+
+        assertEquals("hello-world", helloWorld.getName());
+        assertEquals("Hello World", helloWorld.getText());
+        assertEquals("hello-vietnam", helloVietNam.getName());
+        assertEquals("Hello Viet Nam", helloVietNam.getText());
+
+        ctx.close();
     }
 }

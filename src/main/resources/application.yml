@@ -18,3 +18,9 @@ team:
     manager: 'Nirav Assar'
     coach: 'Mike Tomlin'
     president: 'Dan Rooney'
+
+hello:
+  hello-world:
+    text: 'Hello World'
+  hello-vietnam:
+    text: 'Hello Viet Nam'
