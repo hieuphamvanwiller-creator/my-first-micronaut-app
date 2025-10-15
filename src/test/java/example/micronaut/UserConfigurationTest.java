@@ -1,11 +1,8 @@
 package example.micronaut;
 
-import example.micronaut.core_basics.UserConfiguration;
+import example.micronaut.core_basics.configuration.UserConfiguration;
 import io.micronaut.context.ApplicationContext;
 import org.junit.jupiter.api.Test;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

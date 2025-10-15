@@ -1,4 +1,4 @@
-package example.micronaut.core_basics;
+package example.micronaut.core_basics.configuration;
 
 import io.micronaut.context.annotation.ConfigurationProperties;
 
